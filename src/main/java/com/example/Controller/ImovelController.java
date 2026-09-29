@@ -35,6 +35,7 @@ public class ImovelController {
         this.service = service;
     }
 
+    @GetMapping 
     public List<Imovel> listar(){
         return service.listar();
     }

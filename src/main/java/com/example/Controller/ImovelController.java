@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 
@@ -44,11 +43,7 @@ public class ImovelController {
     public Imovel buscarPorId(@PathVariable Long id){
         return service.buscarPorId(id);
     }
-
-    public String getMethodName(@RequestParam String param) {
-        return new String();
-    }
-    
+   
    @PostMapping 
    public ResponseEntity<ImovelResponseDTO> criar(@Valid @RequestBody ImovelRequestDTO dto){
     Imovel salvo = service.criar(dto);

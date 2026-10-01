@@ -48,4 +48,14 @@ public class GlobalExceptionHandler {
         pd.setDetail("Ocorreu um erro inesperado: " + ex.getMessage());
         return pd;
     }
+
+    @ExceptionHandler (FotoNaoEncontrada.class)
+    @ResponseStatus (HttpStatus.NOT_FOUND)
+    public ProblemDetail fotoHandleNEncontrado(FotoNaoEncontrada ex){
+        ProblemDetail pd = ProblemDetail.forStatus(HttpStatus.NOT_FOUND);
+        pd.setTitle("Foto nao encontrada");
+        pd.setDetail("Aconteceu um erro: " + ex.getMessage());
+
+        return pd;
+    }
 }
